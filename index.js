@@ -33,7 +33,9 @@ const fetchAndStoreMessages = async (entity) => {
         console.error('Error fetching or storing data:', error);
     }
 };
-
+app.get('/', async (req, res) => {
+    res.send('Welcome to the SAM Backend');
+});
 app.post('/schedule', async (req, res) => {
     const { entity, interval } = req.body; // expecting entity and interval in request body
 
